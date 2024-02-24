@@ -150,13 +150,13 @@ app.post("/api/teams", (req, res) => {
   });
 });
 
-// (async () => {
-//   const url = await ngrok.connect({
-//       addr: process.env.PORT,
-//       authtoken: process.env.NGROK_AUTH_TOKEN, // Replace with your Ngrok auth token
-//   });
-//   console.log(`[MESSAGE]: Ngrok tunnel is live at ${url}`);
-// })();
+(async () => {
+  const url = await ngrok.connect({
+      addr: process.env.PORT,
+      authtoken: process.env.NGROK_AUTH_TOKEN, // Replace with your Ngrok auth token
+  });
+  console.log(`[MESSAGE]: Ngrok tunnel is live at ${url}`);
+})();
 
 app.listen(5000, () => {
   console.log("Listening on port 5000");
