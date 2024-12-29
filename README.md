@@ -1,4 +1,4 @@
-# FC-TeamForge Backend: Powering Team Formation ⚙️
+# FC-TeamForge Backend
 
 Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, player management, and database handling for the FC-TeamForge application. This backend server is designed to ensure smooth, efficient, and balanced football team formation
 
