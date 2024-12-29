@@ -21,11 +21,7 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
 - **Database:** MySQL
 - **Environment Management:** dotenv for secure configuration
 
-## ✨ **Planned Enhancements**
 
-1. **Advanced Player Metrics:** Incorporate metrics for player rankings and stats.
-2. **Dynamic Formations:** Expand database support for custom formations.
-3. **Substitute Logic:** Automate substitutes selection during gameplay.
 
 ## 🚀 **Getting Started**
 
@@ -34,5 +30,25 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
 1. **Clone the Repository:**
 
    ```bash
-   git clone https://github.com/BIJJUDAMA/FC-TeamForge-server.git
-   cd FC-TeamForge-server
+  [git clone https://github.com/BIJJUDAMA/FC-TeamForge-server.gitcd FC-TeamForge-server](https://github.com/Ashrockzzz2003/placement_tracker_server/)
+    
+2. **Install Dependencies**
+   
+   ```sh
+   npm install
+   ```
+   
+3. **Create a .env.local file in the root directory of the project, and add the following environment variables**
+   
+   ```env
+   DB_HOST=<your-database-host>
+   DB_USER=<your-database-user>
+   DB_PASSWORD=<your-database-password>
+   DB_NAME=<your-database-name>
+   ```
+   
+4. **To Start the Server**
+   
+   ```sh
+   npm run dev
+   ```
