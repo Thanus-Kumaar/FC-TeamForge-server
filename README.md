@@ -24,33 +24,36 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
 
 ## 🚀 Getting Started
 
-### Backend Installation
+###Backend Installation
 
-1. **Clone the Repository:**
-   ```sh
-   git clone https://github.com/Ashrockzzz2003/placement_tracker_server/
-   ```
-    
-2. **Install Dependencies**
-   
-   ```sh
-   npm install
-   ```
-   
-3. **Create a .env.local file in the root directory of the project, and add the following environment variables**
-   
-   ```env
-   DB_HOST=<your-database-host>
-   DB_USER=<your-database-user>
-   DB_PASSWORD=<your-database-password>
-   DB_NAME=<your-database-name>
-   ```
-   
-4. **To Start the Server**
-   
-   ```sh
-   npm run dev
-   ```
+The frontend depends on a backend server for player management and team formation
+
+1. **Clone the backend repository**
+
+```bash
+git clone https://github.com/Thanus-Kumaar/FC-TeamForge-server.git
+```
+
+2. **Install backend dependencies**
+
+```bash
+npm install
+```
+
+3. **Start the backend server**
+
+```bash
+node server.js
+```
+
+Ensure the backend server is running before starting the frontend
+Run Frontend Locally
+
+4. **Start the development server**
+
+```bash
+npm run dev
+```
    
 ## 📊 Folder Structure
 ```plaintext
