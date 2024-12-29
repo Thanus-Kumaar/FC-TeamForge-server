@@ -58,6 +58,5 @@ FC-TeamForge-server/
 ├── Algorithm.js
 ├── sqlconnect.js
 ├── nodemon.json
-├── package.json
-└── .env.example
+└── package.json
  
