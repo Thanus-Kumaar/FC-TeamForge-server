@@ -54,9 +54,10 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
    ```
 ## 📊 **Folder Structure**
 FC-TeamForge-server/
-├── server.js         
-├── Algorithm.js      
-├── sqlconnect.js     
-├── nodemon.json      
-├── package.json      
-└── .env.example      
+├── server.js
+├── Algorithm.js
+├── sqlconnect.js
+├── nodemon.json
+├── package.json
+└── .env.example
+ 
