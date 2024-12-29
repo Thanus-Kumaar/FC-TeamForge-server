@@ -63,6 +63,33 @@ FC-TeamForge-server/
 ├── package.json
 ├── server.js
 └── sqlconnect.js
-
 ```
+## 🚒 **Contributing**
+
+We welcome contributions from the community! Follow these steps to contribute:
+
+1. **Fork the repository**
+
+2. **Create a new branch:**
+  ```bash
+  git checkout -b feature-name
+  ```
+3. **Make your changes and commit:**
+  ```bash
+  git commit -m "Add your message here"
+  ```
+4. **Push your branch:**
+  ```bash
+  git push origin feature-name
+  ```
+5. **Create a Pull Request**
+
+## ❓ **Issues**
+
+If you encounter bugs or have feature requests, please open an issue in the repository at [Issues](https://github.com/Thanus-Kumaar/FC-TeamForge-server/issues/new)
+
+
+## ⚔️ **License**
+
+This project is licensed under the MIT License.
  
