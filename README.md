@@ -55,10 +55,14 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
 ## 📊 **Folder Structure**
 ```plaintext
 FC-TeamForge-server/
-├── server.js
+├── .gitignore
 ├── Algorithm.js
-├── sqlconnect.js
+├── README.md
 ├── nodemon.json
-└── package.json
+├── package-lock.json
+├── package.json
+├── server.js
+└── sqlconnect.js
+
 ```
  
