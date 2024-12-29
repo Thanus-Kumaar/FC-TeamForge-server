@@ -4,9 +4,9 @@
 
 Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, player management, and database handling for the FC-TeamForge application. This backend server is designed to ensure smooth, efficient, and balanced football team formation
 
-## To view the frontend code [Frontend Code](https://github.com/TharunKumarrA/FC-TeamForge)
+## 💻 The frontend code [Frontend Code](https://github.com/TharunKumarrA/FC-TeamForge)
 
-## ⚽ **Features**
+## ⚽ Features
 
 - **Player Database Management:**
   - Add, update, and manage player data securely in a MySQL database.
@@ -24,10 +24,9 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
 - **Environment Management:** dotenv for secure configuration
 
 
+## 🚀 Getting Started
 
-## 🚀 **Getting Started**
-
-### **Backend Installation**
+### Backend Installation
 
 1. **Clone the Repository:**
    ```sh
@@ -54,7 +53,8 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
    ```sh
    npm run dev
    ```
-## 📊 **Folder Structure**
+   
+## 📊 Folder Structure
 ```plaintext
 FC-TeamForge-server/
 ├── .gitignore
@@ -66,7 +66,8 @@ FC-TeamForge-server/
 ├── server.js
 └── sqlconnect.js
 ```
-## 🚒 **Contributing**
+
+## 🚒 Contributing
 
 We welcome contributions from the community! Follow these steps to contribute:
 
@@ -76,20 +77,22 @@ We welcome contributions from the community! Follow these steps to contribute:
   ```bash
   git checkout -b feature-name
   ```
+
 3. **Make your changes and commit:**
   ```bash
   git commit -m "Add your message here"
   ```
+
 4. **Push your branch:**
   ```bash
   git push origin feature-name
   ```
+
 5. **Create a Pull Request**
 
 ## ❓ **Issues**
 
 If you encounter bugs or have feature requests, please open an issue in the repository at [Issues](https://github.com/Thanus-Kumaar/FC-TeamForge-server/issues/new)
-
 
 ## ⚔️ **License**
 
