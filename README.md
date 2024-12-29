@@ -28,8 +28,9 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
 ### **Backend Installation**
 
 1. **Clone the Repository:**
-
-  [git clone https://github.com/BIJJUDAMA/FC-TeamForge-server.gitcd FC-TeamForge-server](https://github.com/Ashrockzzz2003/placement_tracker_server/) 
+   ```sh
+   git clone https://github.com/BIJJUDAMA/FC-TeamForge-server.gitcd FC-TeamForge-server
+   ```
     
 2. **Install Dependencies**
    
