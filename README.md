@@ -52,3 +52,11 @@ Welcome to the **FC-TeamForge Backend**, the engine that powers team creation, p
    ```sh
    npm run dev
    ```
+## 📊 **Folder Structure**
+FC-TeamForge-server/
+├── server.js         
+├── Algorithm.js      
+├── sqlconnect.js     
+├── nodemon.json      
+├── package.json      
+└── .env.example      
