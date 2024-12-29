@@ -75,7 +75,7 @@ We welcome contributions from the community! Follow these steps to contribute:
 
 2. **Create a new branch:**
   ```bash
-  git checkout -b feature-name
+  git checkout -b main
   ```
 
 3. **Make your changes and commit:**
@@ -85,7 +85,7 @@ We welcome contributions from the community! Follow these steps to contribute:
 
 4. **Push your branch:**
   ```bash
-  git push origin feature-name
+  git push origin main
   ```
 
 5. **Create a Pull Request**
