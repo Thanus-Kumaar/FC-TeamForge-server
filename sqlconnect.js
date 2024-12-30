@@ -7,7 +7,7 @@ function createConnection() {
     host: "localhost",
     user: "root",
     password: process.env.DB_PASS,
-    database: "FC",
+    database: "fc",
   });
 
   con.connect((error) => {
