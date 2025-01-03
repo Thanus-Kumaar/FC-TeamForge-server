@@ -1,4 +1,4 @@
-const { createConnection } = require("./sqlconnect");
+const { createConnection } = require("../config/sqlconnect");
 const con = createConnection();
 
 async function formTeams(players, formation) {

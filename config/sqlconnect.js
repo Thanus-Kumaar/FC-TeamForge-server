@@ -1,13 +1,13 @@
 // sqlconnect.js
 const sql = require("mysql2");
-require('dotenv').config();
+const env=require('./env')
 
 function createConnection() {
   const con = sql.createConnection({
-    host: "localhost",
-    user: "root",
-    password: process.env.DB_PASS,
-    database: "fc",
+    host:env.DB_HOST,
+    user:env.DB_USER,
+    password:env.DB_PASS,
+    database:env.DB_NAME
   });
 
   con.connect((error) => {
