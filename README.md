@@ -97,5 +97,5 @@ If you encounter bugs or have feature requests, please open an issue in the repo
 
 ## ⚔️ **License**
 
-This project is licensed under the MIT License.
+This project is licensed under the [MIT License](LICENSE).
  
