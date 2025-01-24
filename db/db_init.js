@@ -15,8 +15,35 @@ async function initializeDatabase() {
     await connection.query("CREATE DATABASE IF NOT EXISTS fc");
     await connection.query("USE fc");
 
-    // Create Players Table
-    await connection.query(`create table if not exists players(name VARCHAR(255) Primary Key,position Varchar(100),positioncategory Varchar(100));`);
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS users (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          username VARCHAR(100) NOT NULL UNIQUE,
+          email VARCHAR(255) NOT NULL UNIQUE,
+          password VARCHAR(255) NOT NULL,
+          created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+      );
+      `);
+      
+      await connection.query(`
+      CREATE TABLE IF NOT EXISTS players (
+          id INT AUTO_INCREMENT PRIMARY KEY,
+          name VARCHAR(255) NOT NULL,
+          position VARCHAR(100),
+          positioncategory VARCHAR(100)
+      );
+      `);
+      
+      await connection.query(`
+      CREATE TABLE IF NOT EXISTS user_players (
+          user_id INT NOT NULL,
+          player_id INT NOT NULL,
+          PRIMARY KEY (user_id, player_id),
+          FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE,
+          FOREIGN KEY (player_id) REFERENCES players(id) ON DELETE CASCADE
+      );
+      `);
+      
 
     // Create Formations Table
     await connection.query(`create table if not exists formations(formation varchar(100) Unique ,no_of_players int);`);

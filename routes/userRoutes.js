@@ -6,7 +6,7 @@ const router = express.Router();
 
 router.post("/signup", authController.signup);
 router.post("/login", authController.login);
-router.post("/players", tokenAuthenticator, playerController.addPlayerToUser);
-router.get("/players", tokenAuthenticator, playerController.getPlayersForUser);
+router.post("/addPlayers", tokenAuthenticator, playerController.addPlayerToUser);
+router.get("/getPlayers", tokenAuthenticator, playerController.getPlayersForUser);
 
 module.exports = router;
