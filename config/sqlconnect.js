@@ -12,7 +12,7 @@ function createConnection() {
     queueLimit: 0, 
   });
 
-  console.log("Connection pool created successfully for SQL Database");
+  // console.log("Connection pool created successfully for SQL Database");
 
   return pool.promise(); 
 }

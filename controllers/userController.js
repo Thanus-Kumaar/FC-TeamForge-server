@@ -6,7 +6,7 @@ const JWT_SECRET = process.env.JWT_SECRET || "your_jwt_secret";
 
 const authController = {
   signup: async (req, res) => {
-    const { username, email, password } = req.body;
+    const { username, email, password } = req.body; // Password should be send hashed
 
     if (!username || !email || !password) {
       return res.status(400).json({ error: "All fields are required" });
@@ -17,8 +17,7 @@ const authController = {
       return res.status(400).json({ error: "Email already registered" });
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    await userModule.createUser(username, email, hashedPassword);
+    await userModule.createUser(username, email, password);
 
     res.status(201).json({ message: "User registered successfully" });
   },

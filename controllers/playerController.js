@@ -10,8 +10,7 @@ const addPlayer = async (req, res) => {
   }
 
   const insertPlayerQuery = `INSERT INTO Players (name, positionCategory, position) VALUES (?, ?, ?) ON DUPLICATE KEY UPDATE id=LAST_INSERT_ID(id);`;
-  const insertToUserPlayersQuery = `INSERT INTO user_players (user_id, player_id) VALUES (?, ?);
-  `;
+  const insertToUserPlayersQuery = `INSERT INTO user_players (user_id, player_id) VALUES (?, ?);`;
 
   let connection = null;
 
