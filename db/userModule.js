@@ -1,59 +1,41 @@
 const { createConnection } = require("../config/sqlconnect");
-const con = createConnection();
+const pool = createConnection();
 
 const userModule = {
-  
-  createUser: (username, email, password, res) => {
+  createUser: async (username, email, password, res) => {
     const query = "INSERT INTO users (username, email, password) VALUES (?, ?, ?)";
-    con.query(query, [username, email, password], (err, result) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({ Error: "User already exists or database error" });
-      }
+    let connection = null;
+
+    try {
+      connection = await pool.getConnection(); 
+      await connection.query(query, [username, email, password]);
       res.status(201).json({ Status: "User created successfully" });
-    });
+    } catch (err) {
+      console.error("Error in createUser:", err);
+      res.status(500).json({ Error: "Database error or user already exists" });
+    } finally {
+      if (connection) connection.release(); 
+    }
   },
 
-  
-  findUserByEmail: (email, res, callback) => {
+  findUserByEmail: async (email, res, callback) => {
     const query = "SELECT * FROM users WHERE email = ?";
-    con.query(query, [email], (err, results) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({ Error: "Database error" });
-      }
+    let connection = null;
+
+    try {
+      connection = await pool.getConnection();
+      const [results] = await connection.query(query, [email]);
       if (results.length === 0) {
         return res.status(404).json({ Error: "User not found" });
       }
       callback(results[0]);
-    });
+    } catch (err) {
+      console.error("Error in findUserByEmail:", err);
+      res.status(500).json({ Error: "Database error" });
+    } finally {
+      if (connection) connection.release();
+    }
   },
 };
 
-const playerModule = {
-  
-  addPlayerToUserId: (userId, playerId, res) => {
-    const query = "INSERT INTO user_players (user_id, player_id) VALUES (?, ?)";
-    con.query(query, [userId, playerId], (err, result) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({ Error: "Database error or player already assigned" });
-      }
-      res.status(201).json({ Status: "Player added to user successfully" });
-    });
-  },
-
-  
-  getPlayersForUserId: (userId, res) => {
-    const query = "SELECT p.* FROM players p INNER JOIN user_players up ON p.id = up.player_id WHERE up.user_id = ?";
-    con.query(query, [userId], (err, results) => {
-      if (err) {
-        console.log(err);
-        return res.status(500).json({ Error: "Database error" });
-      }
-      res.status(200).json({ Status: "Players retrieved successfully", Players: results });
-    });
-  },
-};
-
-module.exports = { userModule, playerModule };
+module.exports = { userModule };

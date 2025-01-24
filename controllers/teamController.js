@@ -1,17 +1,26 @@
 const { formTeams } = require("../services/Algorithm");
+const { createConnection } = require("../config/sqlconnect");
+const pool = createConnection();
 
 const createTeams = async (req, res) => {
   const { players, formation } = req.body;
-  // using try catch block for handle errrror
+  let connection = null;
+
   try {
-    const t = await formTeams(players, formation);
-    if (t[0] && t[1]) {
-      res.status(200).json({ Team: t });
+    connection = await pool.getConnection();
+
+    const teams = await formTeams(players, formation);
+
+    if (teams[0] && teams[1]) {
+      res.status(200).json({ Team: teams });
     } else {
       res.status(500).json({ Error: "Internal server error!" });
     }
   } catch (error) {
+    console.error("Error in createTeams:", error);
     res.status(500).json({ Error: "Team Formation Failed" });
+  } finally {
+    if (connection) connection.release();
   }
 };
 

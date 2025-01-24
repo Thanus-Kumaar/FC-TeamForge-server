@@ -46,7 +46,13 @@ async function initializeDatabase() {
       
 
     // Create Formations Table
-    await connection.query(`create table if not exists formations(formation varchar(100) Unique ,no_of_players int);`);
+    await connection.query(`
+      CREATE TABLE IF NOT EXISTS formations (
+          formation VARCHAR(100) UNIQUE,
+          no_of_players INT
+      );
+      `);
+      
 
     console.log("Database initialized successfully!");
   } catch (err) {

@@ -1,4 +1,4 @@
-const { userModule, playerModule } = require("../db/userModule");
+const { userModule } = require("../db/userModule");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
@@ -46,25 +46,5 @@ const authController = {
   },
 };
 
-const playerController = {
-  addPlayerToUser: async (req, res) => {
-    const userId = req.user.id;
-    const { playerId } = req.body;
 
-    if (!playerId) {
-      return res.status(400).json({ error: "Player ID is required" });
-    }
-
-    await playerModule.addPlayerToUserId(userId, playerId);
-    res.status(200).json({ message: "Player added successfully" });
-  },
-
-  getPlayersForUser: async (req, res) => {
-    const userId = req.user.id;
-
-    const players = await playerModule.getPlayersForUserId(userId);
-    res.status(200).json({ players });
-  },
-};
-
-module.exports = { authController, playerController };
+module.exports = { authController };
