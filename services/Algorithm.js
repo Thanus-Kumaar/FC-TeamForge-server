@@ -17,8 +17,8 @@ const con = createConnection();
 */
 
 async function formTeams(players, formation) {
-  const teams = { 0: {}, 1: {} }; // Object to store both the teams.
-  const remaining_players = new Set(); // Set to store players who aren't assigned a position.
+  let teams = { 0: {}, 1: {} }; // Object to store both the teams.
+  let remaining_players = new Set(); // Set to store players who aren't assigned a position.
 
   // Allowed positions for defenders, midfielders, and attackers based on the formation.
   // For each category, the keys are the number of players, and the values are arrays of positions.
